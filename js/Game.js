@@ -7,10 +7,26 @@ class Game {
 
     this.leader1 = createElement("h2");
     this.leader2 = createElement("h2");
+    this.upButton = createButton("./assets/upArrow.png");//testing
     this.playerMoving = false;
+
+    
 
     this.leftKeyActive = false;
     this.blast = false; //C42//SA
+  }
+
+  setElementsPosition(){
+    this.upButton.position(500,500);
+  }
+
+  handleMousePressed() {
+    this.upButton.mousePressed(() => {
+      
+      this.playerMoving = true;
+        player.positionY += 10;
+        player.update();
+    })
   }
 
   getState() {
