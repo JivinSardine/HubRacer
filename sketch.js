@@ -4,13 +4,14 @@ var fuelImage, powerCoinImage, lifeImage, obstacle1Image, obstacle2Image;
 var blastImage;                   //C42// SA
 var database, gameState;
 var form, player, playerCount;
-var allPlayers, car1, car2, fuels, powerCoins, obstacle1,obstacle2; 
+var allPlayers, car1, car2,car3, fuels, powerCoins, obstacle1,obstacle2; 
 var cars = [];
 
 function preload() {
-  backgroundImage = loadImage("./assets/background.png");
+  backgroundImage = loadImage("./assets/background.jpg");
   car1_img = loadImage("./assets/car1.png");
   car2_img = loadImage("./assets/car2.png");
+  car3_img = loadImage("./assets/car3.png");
   track = loadImage("./assets/track.jpg");
   fuelImage = loadImage("./assets/fuel.png");
   powerCoinImage = loadImage("./assets/goldCoin.png");
@@ -30,7 +31,7 @@ function setup() {
 
 function draw() {
   background(backgroundImage);
-  if (playerCount === 2) {
+  if (playerCount === 3) {
     game.update(1);
   }
 

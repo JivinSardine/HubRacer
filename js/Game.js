@@ -32,25 +32,31 @@ class Game {
     form = new Form();
     form.display();
 
-    car1 = createSprite(width / 2 - 50, height - 100);
+    car1 = createSprite(100, height - 100);
     car1.addImage("car1", car1_img);
-    car1.scale = 0.07;
+    car1.scale = 0.2;
 
     car1.addImage("blast", blastImage); //C42 //SA
 
-    car2 = createSprite(width / 2 + 100, height - 100);
+    car2 = createSprite(width / 2 + 50, height - 100);
     car2.addImage("car2", car2_img);
-    car2.scale = 0.07;
+    car2.scale = 0.2;
 
-    car2.addImage("blast", blastImage); //C42//SA
+    car2.addImage("blast", blastImage);
 
-    cars = [car1, car2];
+    car3 = createSprite(width / 2 + 200, height - 100);
+    car3.addImage("car3", car3_img);
+    car3.scale = 0.2;
+
+    car3.addImage("blast", blastImage); //C42//SA
+
+    cars = [car1, car2, car3];
 
     fuels = new Group();
     powerCoins = new Group();
 
     // Adding fuel sprite in the game
-    this.addSprites(fuels, 4, fuelImage, 0.02);
+    //this.addSprites(fuels, 4, fuelImage, 0.02);
 
     // Adding coin sprite in the game
     this.addSprites(powerCoins, 18, powerCoinImage, 0.09);
@@ -149,9 +155,9 @@ class Game {
     if (allPlayers !== undefined) {
       image(track, 0, -height * 5, width, height * 6);
 
-      this.showFuelBar();
+      //this.showFuelBar();
       this.showLife();
-      this.showLeaderboard();
+      //this.showLeaderboard();
 
       //index of the array
       var index = 0;
@@ -179,7 +185,7 @@ class Game {
           fill("red");
           ellipse(x, y, 60, 60);
 
-          this.handleFuel(index);
+          //this.handleFuel(index);
           this.handlePowerCoins(index);
           this.handleCarACollisionWithCarB(index); //C41//BP//TA
           this.handleObstacleCollision(index); //C41//SA
@@ -218,6 +224,7 @@ class Game {
     }
   }
 
+/*
   handleFuel(index) {
     // Adding fuel
     cars[index - 1].overlap(fuels, function(collector, collected) {
@@ -237,6 +244,7 @@ class Game {
       this.gameOver();
     }
   }
+  */
 
   handlePowerCoins(index) {
     cars[index - 1].overlap(powerCoins, function(collector, collected) {
@@ -260,6 +268,7 @@ class Game {
     });
   }
 
+  /*
   showFuelBar() {
     push();
     image(fuelImage, width / 2 - 130, height - player.positionY - 350, 20, 20);
@@ -270,18 +279,19 @@ class Game {
     noStroke();
     pop();
   }
+  */
 
   showLife() {
     push();
-    image(lifeImage, width / 2 - 130, height - player.positionY - 400, 20, 20);
+    image(lifeImage, width / 2 - 130, height - player.positionY - 300, 20, 20);
     fill("white");
-    rect(width / 2 - 100, height - player.positionY - 400, 185, 20);
+    rect(width / 2 - 100, height - player.positionY - 300, 185, 20);
     fill("#f50057");
-    rect(width / 2 - 100, height - player.positionY - 400, player.life, 20);
+    rect(width / 2 - 100, height - player.positionY - 300, player.life, 20);
     noStroke();
     pop();
   }
-
+/*
   showLeaderboard() {
     var leader1, leader2;
     var players = Object.values(allPlayers);
@@ -324,6 +334,7 @@ class Game {
     this.leader1.html(leader1);
     this.leader2.html(leader2);
   }
+  */
 
   handlePlayerControls() {
     //C41 //TA
