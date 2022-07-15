@@ -32,25 +32,25 @@ class Game {
     form = new Form();
     form.display();
 
-    car1 = createSprite(10,500,20,20);
-    //car1.addImage("car1", car1_img);
-    //car1.scale = 0.3;
+    car1 = createSprite(width / 2 + 100, height - 100);
+    car1.addImage("car1", car1_img);
+    car1.scale = 0.2;
 
-    //car1.addImage("blast", blastImage); //C42 //SA
+    car1.addImage("blast", blastImage); //C42 //SA
 
-    car2 = createSprite(800,500,20,20);
-    //car2.addImage("car2", car2_img);
-    //car2.scale = 0.2;
+    car2 = createSprite(width / 2 + 200, height - 100);
+    car2.addImage("car2", car2_img);
+    car2.scale = 0.2;
 
-    //car2.addImage("blast", blastImage);
+    car2.addImage("blast", blastImage);
 
-    //car3 = createSprite(width / 2 + 200, height - 100);
+    //car3 = createSprite(width / 2 + 150, height - 100);
     //car3.addImage("car3", car3_img);
     //car3.scale = 0.2;
 
     //car3.addImage("blast", blastImage); //C42//SA
 
-    cars = [car1, car2];
+    cars = [car1, car2 /*,car3*/];
 
     fuels = new Group();
     powerCoins = new Group();
@@ -153,7 +153,7 @@ class Game {
     player.getCarsAtEnd();
 
     if (allPlayers !== undefined) {
-      //image(track, 0, -height * 5, width, height * 6);
+      image(track, 0, -height * 5, width, height * 6);
 
       //this.showFuelBar();
       this.showLife();
@@ -173,8 +173,8 @@ class Game {
         var currentlife = allPlayers[plr].life;
 
         if (currentlife <= 0) {
-          //cars[index - 1].changeImage("blast");
-          //cars[index - 1].scale = 0.3;
+          cars[index - 1].changeImage("blast");
+          cars[index - 1].scale = 0.3;
         }
 
         cars[index - 1].position.x = x;
