@@ -95,7 +95,7 @@ class Game {
       obstacle2,
       obstacle2Positions.length,
       obstacle2Image,
-      0.04,
+      0.6,
       obstacle2Positions
     );
   }

@@ -10,10 +10,10 @@ var cars = [];
 
 function preload() {
   backgroundImage = loadImage("./assets/background.png");
-  car1_img = loadImage("./assets/car1.png");
-  car2_img = loadImage("./assets/car2.png");
-  car3_img = loadImage("./assets/car3.png");
-  track = loadImage("./assets/track.jpg");
+  car1_img = loadImage("./assets/Crow_jump.gif");
+  car2_img = loadImage("./assets/Shelly_kick.gif");
+  car3_img = loadImage("./assets/Leon_hide.gif");
+  track = loadImage("./assets/track.png");
   fuelImage = loadImage("./assets/fuel.png");
   powerCoinImage = loadImage("./assets/goldCoin.png");
   lifeImage = loadImage("./assets/life.png");
